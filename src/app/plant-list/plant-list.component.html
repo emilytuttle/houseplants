@@ -1,0 +1,9 @@
+
+<h2>Houseplants</h2>
+
+<div *ngFor="let plant of plants">
+  <p>{{ plant.name }} ({{ plant.type }})</p>
+  <button (click)="deletePlant(plant._id)">Delete</button>
+  <a [routerLink]="['/plant', plant._id]">View Details</a> 
+  
+</div>
