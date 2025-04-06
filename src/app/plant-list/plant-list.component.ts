@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Import CommonModule here
 import { PlantService } from '../plant.service';
 
 @Component({
   selector: 'app-plant-list',
   templateUrl: './plant-list.component.html',
-  styleUrls: ['./plant-list.component.css']
+  styleUrls: ['./plant-list.component.css'],
+  standalone: true,  // If this is a standalone component
+  imports: [CommonModule]  // Add CommonModule to imports
 })
 export class PlantListComponent implements OnInit {
   plants: any[] = [];
