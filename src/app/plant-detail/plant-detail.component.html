@@ -1,9 +1,14 @@
-
-<h2>Plant Details</h2>
-<div>
-  <h3>{{ plant.name }}</h3>
-  <p><strong>Type:</strong> {{ plant.type }}</p>
-  <p><strong>Description:</strong> {{ plant.description }}</p>
-  <p><strong>Water Frequency:</strong> {{ plant.waterFrequency }}</p>
-  <p><strong>Light Requirement:</strong> {{ plant.lightRequirement }}</p>
-</div>
+plants.forEach(plant => {
+  const plantItem = document.createElement('li');
+  plantItem.innerHTML = `
+    <strong>${plant.name}</strong> (${plant.type})<br>
+    Water Frequency: ${plant.waterFrequency}<br>
+    Light Requirement: ${plant.lightRequirement}<br>
+    Description: ${plant.description || 'No description'}<br>
+    <div id='buttons-container'><button onclick="deletePlant('${plant._id}')">Delete</button>
+    <button onclick="editPlant('${plant._id}')">Edit</button></div>
+    
+    <hr>
+  `;
+  plantListElement.appendChild(plantItem);
+});

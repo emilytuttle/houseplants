@@ -18,7 +18,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
   <div id="main-container">
     <h1>My Plants 🌱🪴🌿</h1>
     
@@ -40,7 +54,7 @@
 
   <br>
 
-  <!-- Form to edit an existing plant -->
+  <!-- Form to edit a plant already in system-->
   <h3>Edit Plant</h3>
   <form id="editPlantForm" style="display: none;">
     <input type="hidden" id="editPlantId">
@@ -124,7 +138,6 @@
       console.error('Error adding plant:', error);
     }
   });
-
   // Delete a plant
   window.deletePlant = async (plantId) => {
     try {

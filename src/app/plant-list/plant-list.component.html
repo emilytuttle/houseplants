@@ -1,9 +1,21 @@
+<h1>My Plants 🌱🪴🌿</h1>
+    
+    
+  <h2>Plants List</h2>
+  <button id="getPlants">Get All Plants</button>
+  <ul id="plantList"></ul>
 
-<h2>Houseplants</h2>
+  <!-- Form to add new plant -->
+  <h3>Add New Plant</h3>
+  <form id="addPlantForm">
+    <input type="text" id="name" placeholder="Plant Name" required>
+    <input type="text" id="type" placeholder="Plant Type" required>
+    <input type="text" id="waterFrequency" placeholder="Water Frequency" required>
+    <input type="text" id="lightRequirement" placeholder="Light Requirement" required>
+    <textarea id="description" placeholder="Description"></textarea>
+    <button type="submit">Add Plant</button>
+  </form>
 
-<div *ngFor="let plant of plants">
-  <p>{{ plant.name }} ({{ plant.type }})</p>
-  <button (click)="deletePlant(plant._id)">Delete</button>
-  <a [routerLink]="['/plant', plant._id]">View Details</a> 
-  
-</div>
+  <app-plant-detail></app-plant-detail>
+
+  <app-edit-plant></app-edit-plant>
